@@ -6,7 +6,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyB74O9lFei47J9yK26DOmPMFr1In0QUpIo",
   appId: "1:70471515696:web:5fcbf693f473ff4b4e77f5",
   projectId: "streeteasyclone",
-  measurementId: "G-39XDR0NHSS",
+  measurementId: "G-H8KYBF07RB",
 };
 
 // Initialize Firebase
