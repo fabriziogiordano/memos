@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "declaration-colon-newline-after": null,
+    "value-list-comma-newline-after": null
+  },
+  "extends": "stylelint-config-standard"
+}

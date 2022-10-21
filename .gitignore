@@ -1,0 +1,17 @@
+# Mac Files
+.DS_Store
+
+.firebase/
+node_modules/
+public/
+
+*min.css
+*min.js
+*min.html
+
+.github/workflows_o/
+
+#src/backend
+#functions/
+
+.env

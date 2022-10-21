@@ -1,0 +1,65 @@
+<!--!
+    This web app was buid for fun over a weekend by Fabrizio Giordano.
+    Buy him a beer: giordano.fabrizio@gmail.com twitter.com/fabrygio
+-->
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <link rel="mask-icon" href="./assets/images/safari-pinned-tab.svg" color="#000">
+    <meta name="contact" content="giordano.fabrizio@gmail.com">
+    <meta name="msapplication-TileColor" content="#000">
+    <meta name="theme-color" content="#000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#000" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#000" media="(prefers-color-scheme: dark)">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="TipiT" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>Memos</title>
+    <link href="./assets/css/main.css?v=COMMIT" rel="stylesheet" type="text/css" />
+    <script>APP_VERSION = "COMMIT"</script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js" defer></script>
+    <script src="./assets/js/index.js?v=COMMIT" defer></script>
+    <script src="./assets/js/bundle.min.js?v=COMMIT" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <header>
+            <img title="memes logo" src="./assets/images/android-chrome-192x192.png" />
+        </header>
+
+        <section class="main-controls">
+            <canvas class="visualizer" height="60px" width="100vw"></canvas>
+            <div id="buttons">
+                <button class="record" isPlaying="off">Record</button>
+            </div>
+        </section>
+
+        <section id="statusWrapper">
+            <p id="loaded_n_total"></p>
+            <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
+            <h3 id="status"></h3>
+        </section>
+
+        <!-- Record -->
+        <section class="sound-clips"></section>
+
+        <section id="transcribedWrapper">
+            <span id="copy">📋 copy</span>
+            <h2 id="transcribed"></h2>
+        </section>
+    </div>
+    <div class="poweredby">Powered by Whisper by Open AI</div>
+</body>
+
+</html>
