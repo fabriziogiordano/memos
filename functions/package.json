@@ -7,7 +7,7 @@
     "serve": "firebase emulators:start --only functions",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions && say done",
     "logs": "firebase functions:log"
   },
   "engines": {
@@ -15,12 +15,10 @@
   },
   "main": "index.js",
   "dependencies": {
-    "busboy": "^1.6.0",
     "firebase-admin": "^10.0.2",
     "firebase-functions": "^3.18.0",
     "form-data": "^4.0.0",
-    "formidable-serverless": "^1.1.1",
-    "uuid-v4": "^0.1.0"
+    "formidable-serverless": "^1.1.1"
   },
   "devDependencies": {
     "firebase-functions-test": "^0.2.0"

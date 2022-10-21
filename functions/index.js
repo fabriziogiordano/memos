@@ -1,11 +1,11 @@
 const fs = require("fs");
 const util = require("util");
 const functions = require("firebase-functions");
+
 // The Firebase Admin SDK to access Firestore.
 const admin = require("firebase-admin");
 admin.initializeApp();
 
-const UUID = require("uuid-v4");
 const FormData = require("form-data");
 
 const fetch = require("node-fetch");
@@ -20,7 +20,7 @@ exports.uploadAudio = functions
     const form = new formidable.IncomingForm();
     return new Promise((resolve, reject) => {
       form.parse(req, async (err, fields, files) => {
-        console.log(JSON.stringify({ fields, files }, null, 2));
+        // console.log(JSON.stringify({ fields, files }, null, 2));
 
         const file = files.file;
         if (!file) {
@@ -29,7 +29,7 @@ exports.uploadAudio = functions
         }
 
         const filePath = file.path;
-        const fileType = file.type;
+        // const fileType = file.type;
         // console.log("File path: " + filePath);
         // console.log("File path: " + fileType);
         // console.log(util.inspect(file));
