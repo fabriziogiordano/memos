@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "streeteasyclone"
+  },
+  "hosting": {
+    "site": "memos",
+    "public": "public"
+  }
+}

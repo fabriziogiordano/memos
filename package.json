@@ -1,0 +1,49 @@
+{
+  "name": "memos",
+  "version": "1.0.0",
+  "description": "Record and transcribe audio using Whisper Open AI",
+  "main": "index.js",
+  "scripts": {
+    "minify:js": "minify ./public/assets/js/index.js > ./public/assets/js/index.min.js",
+    "minify:css": "minify ./public/assets/css/main.css > ./public/assets/css/main.min.css",
+    "minify:html": "minify ./public/index.html > ./public/index.min.html",
+    "minify": "npm run minify:css && npm run minify:html",
+    "mv:js": "mv ./public/assets/js/index.min.js ./public/assets/js/index.js",
+    "mv:css": "mv ./public/assets/css/main.min.css ./public/assets/css/main.css",
+    "mv:html": "mv ./public/index.min.html ./public/index.html",
+    "mv": "npm run mv:css && npm run mv:html",
+    "rollup:bundle": "rollup --bundleConfigAsCjs -c rollup.config.js",
+    "rollup:compress": "minify ./public/assets/js/bundle.js > ./public/assets/js/bundle.min.js",
+    "rollup": "npm run rollup:bundle && npm run rollup:compress && rm ./public/assets/js/bundle.js",
+    "build": "rm -rf ./public && cp -r ./src/frontend ./public && npm run minify && npm run mv && npm run rollup",
+    "serve": "cd ./public && python3 -m http.server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabriziogiordano/memos.git"
+  },
+  "author": "Fabrizio Giordano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabriziogiordano/memos/issues"
+  },
+  "homepage": "https://github.com/fabriziogiordano/memos#readme",
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": false
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "eslint": "^8.25.0",
+    "minify": "^9.1.0",
+    "prettier": "^2.7.1",
+    "rollup": "^3.2.3",
+    "stylelint": "^14.14.0",
+    "stylelint-config-standard": "^29.0.0"
+  },
+  "dependencies": {
+    "firebase": "^9.12.1"
+  }
+}

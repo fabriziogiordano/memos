@@ -1,0 +1,30 @@
+{
+  "hosting": {
+    "site": "memos",
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "/uploadAudio",
+        "function": "uploadAudio"
+      },
+      {
+        "source": "/fetchData",
+        "function": "fetchData"
+      }
+    ]
+  },
+  "functions": [
+    {
+      "site": "memos",
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ]
+    }
+  ]
+}
