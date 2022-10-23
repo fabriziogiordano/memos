@@ -63,23 +63,24 @@ fastify.post("/upload", async (request, reply) => {
   }
 
   const converting = `ffmpeg -i ${mp3Path} -ar 16000 -ac 1 -c:a pcm_s16le ${wavPath} -y`;
-  console.log("Converting to wav\n", converting);
+  //console.log("Converting to wav\n", converting);
   await exec(converting);
 
   const models = ["tiny", "base", "small"];
+  const model = models[0];
 
-  const whispering = `/root/whisper.cpp/main -nt -m /root/whisper.cpp/models/ggml-${models[0]}.en.bin -otxt -f ${wavPath}`;
-  console.log("Using whisper cpp\n", whispering);
+  const whispering = `/root/whisper.cpp/main -nt -m /root/whisper.cpp/models/ggml-${model}.en.bin -otxt -f ${wavPath}`;
+  console.log(`Transcoding using whisper cpp. Model: ${model}`);
   await exec(whispering);
 
-  console.log("Read txt");
+  // console.log("Read txt");
   const { stdout, stderr } = await exec(`cat ${txtPath}`);
 
   // Old implementation
   // await exec(`python3 transcribe.py ${filePath}`);
   // const { stdout, stderr } = await exec(`python3 transcribe.py ${filePath}`);
 
-  console.log(stdout);
+  console.log(stdout.trim());
 
   reply.send({ message: stdout, error: false });
 });
